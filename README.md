@@ -46,7 +46,9 @@ npm install google-signin-vue
 ```
 <googleSignIn
       :clientId="'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'"
-    />
+      :successCallBack="getSuccessData"
+      :failureCallBack="getFailureData"
+/>
 ```
 #### On the script of the same template
 ```
@@ -56,6 +58,15 @@ export default {
   name: 'app',
   components: {
     googleSignIn
+  },
+  methods:{
+    getSuccessData:function (user) {
+      // The User variable contains id_token, id, name, image, email as objects.
+      // Send The id_token to the Backend for the verication.
+    },
+    getFailurData:function (errorData) {
+      // The errorData variable contains failure details
+    }
   }
 }
 ```
@@ -80,7 +91,9 @@ export default {
 ```
 <googleSignIn
       :clientId="'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'"
-    />
+      :successCallBack="getSuccessData"
+      :failureCallBack="getFailureData"
+/>
 ```
 #### On the script of the same template
 ```
@@ -90,6 +103,15 @@ export default {
   name: 'app',
   components: {
     googleSignIn
+  },
+  methods:{
+    getSuccessData:function (user) {
+      // The User variable contains id_token, id, name, image, email as objects.
+      // Send The id_token to the Backend for the verication.
+    },
+    getFailurData:function (errorData) {
+      // The errorData variable contains failure details
+    }
   }
 }
 ```

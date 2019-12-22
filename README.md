@@ -37,7 +37,7 @@ npm install google-signin-vue
  
  - Now you’ll get the credentials, use only the client-id, keep your client- secret confidential. client- secret should be provided only to the backend.
 
-### Vue Project
+### For Vue Project
 - In public/index.html add the below script in header
 ```
 <script src="https://apis.google.com/js/platform.js"></script>
@@ -60,7 +60,7 @@ export default {
 }
 ```
 
-### Nuxt Users
+### For Nuxt Project
  - Create app.html in the root directory of the project and add
  ```<!DOCTYPE html>
     <html {{ HTML_ATTRS }}>

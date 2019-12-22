@@ -1,6 +1,6 @@
 {
-  "name": "google-signin-vue-nuxt",
-  "version": "1.0.0",
+  "name": "google-signin-vue",
+  "version": "1.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -26,11 +26,12 @@
     "url": "git+https://github.com/itsCb/googleSignIn-vueJs.git"
   },
   "keywords": [
-    "google",
-    "sign-in",
-    "api",
-    "for",
-    "vuejs"
+    "google login",
+    "google signin",
+    "google oauth",
+    "google oauth2",
+    "nuxt",
+    "vue"
   ],
   "author": "CB",
   "license": "ISC",

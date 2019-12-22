@@ -1,10 +1,12 @@
 # google-signin-vue
 
+This Package can be used for both vue and nuxt. Both Documentation are given below.
+
 ## Project setup
 ```
 npm install google-signin-vue
 ```
-###Basic Setup
+### Basic Setup
  To use this package, we must get the client-id from google. 
  
  - Go to [Google developer Console](https://console.developers.google.com/apis/dashboard)
@@ -35,7 +37,7 @@ npm install google-signin-vue
  
  - Now you’ll get the credentials, use only the client-id, keep your client- secret confidential. client- secret should be provided only to the backend.
 
-###Vue Project
+### Vue Project
 - In public/index.html add the below script in header
 ```
 <script src="https://apis.google.com/js/platform.js"></script>
@@ -58,7 +60,7 @@ export default {
 }
 ```
 
-###Nuxt Users
+### Nuxt Users
  - Create app.html in the root directory of the project and add
  ```<!DOCTYPE html>
     <html {{ HTML_ATTRS }}>
@@ -91,7 +93,7 @@ export default {
   }
 }
 ```
-####Note: You must specify the callback function as props to get the data, The supported props are given below.
+#### Note: You must specify the callback function as props to get the data, The supported props are given below.
 
 | Prop                                                    |   Type   |      Required      | Description                                                                                      |
 | ------------------------------------------------------- | :------: | :----------------: | ------------------------------------------------------------------------------------------------ |

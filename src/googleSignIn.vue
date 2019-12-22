@@ -30,7 +30,7 @@
         type:String
       },
       scope:{
-        default:'email profile id',
+        default:'email profile openid',
         type:String
       },
       buttonWidth:{
@@ -43,14 +43,17 @@
       },
     },
     mounted() {
+      window.__google_oauth_useful_variables = {client_id: this.clientId, warning: this.warning};
       gapi.load('auth2', function(){
-        auth2 = gapi.auth2.init({
-          client_id: this.client_id,
-          cookiepolicy: 'single_host_origin',
-        });
-        // attachSignin(document.getElementById('googleSignIn'));
+        try {
+          auth2 = gapi.auth2.init({
+            client_id: window.__google_oauth_useful_variables.client_id,
+            cookiepolicy: 'single_host_origin',
+          });
+        }catch (e) {
+          window.__google_oauth_useful_variables.warning ? console.warn(e):null;
+        }
       });
-
       gapi.signin2.render('googleSignIn', {
         scope:this.scope,
         width:this.width,
@@ -69,7 +72,7 @@
         else if(typeof this.successCallBack !== "function")
           this.warning ? console.warn("Google Sign In --> Success Callback must be a valid Function") : null;
         if(typeof this.failureCallBack === "undefined")
-          this.warning ? console.warn("Google Sign In --> Specify the Failure callback method to get the data") : null;
+          this.warning ? console.warn("Google Sign In --> Specify the Failure callback method to get the Error data") : null;
         else if(typeof this.failureCallBack !== "function")
           this.warning ? console.warn("Google Sign In --> Failure Callback must be a valid Function") : null;
       },
@@ -78,10 +81,11 @@
         let profile = googleUser.getBasicProfile();
         if (typeof this.successCallBack === "function") {
           this.successCallBack({
-            id_token, id: profile.getId(),
-            name: profile.getName(),
-            image: profile.getImageUrl(),
-            email: profile.getEmail()
+            id_token,
+            id: profile.getId() ? profile.getId() : null,
+            name: profile.getName() ? profile.getName() : null,
+            image: profile.getImageUrl() ? profile.getImageUrl() : null,
+            email: profile.getEmail() ? profile.getEmail() : null
           });
         }
       },

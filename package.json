@@ -1,6 +1,6 @@
 {
-  "name": "google-signin-vue",
-  "version": "0.2.0",
+  "name": "google-signin-vue-nuxt",
+  "version": "1.0.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -19,7 +19,7 @@
     "> 1%",
     "last 2 versions"
   ],
-  "description": "## Project setup ``` npm install ```",
+  "description": "This package can be used for both vue and nuxt.",
   "main": "./src/googleSignIn.vue",
   "repository": {
     "type": "git",

@@ -124,7 +124,8 @@ export default {
 | `className`                                             |  string  |                    | Any classname if needed to append on the button                                                  |
 | `successCallBack`                                       | function |                    | Function to receive success data, must have one parameter                                        |
 | `failureCallBack`                                       | function |                    | Function to receive failure data, must have one parameter                                        |
-| `customButton`                                          |  boolean |                    | True if gonna set the custom button. Set via `<slot> Your Code Here</slot>` .                    |
+| `customButton`                                          |  boolean |                    | True if gonna set the custom button. Set via `<slot> Your Code Here</slot>` . customButtonId is mandatory if it is set to True                  |
+| `customButtonId`                                        |  string  |                    | Id of the custom button, so we can trigger the google on clicking the button                     |
 | `longTitle`                                             |  boolean |                    | Google's Option to set long title. Default is false.                                             |
 | `theme`                                                 |  string  |                    | Google's Option to change the button's display. 'light' / 'dark' are the only value supported.   |
 | `buttonWidth`                                           |  number  |                    | Specify the Button width to google.                                                              |

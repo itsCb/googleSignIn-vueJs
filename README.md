@@ -64,7 +64,7 @@ export default {
       // The User variable contains id_token, id, name, image, email as objects.
       // Send The id_token to the Backend for the verication.
     },
-    getFailurData:function (errorData) {
+    getFailureData:function (errorData) {
       // The errorData variable contains failure details
     }
   }
@@ -109,7 +109,7 @@ export default {
       // The User variable contains id_token, id, name, image, email as objects.
       // Send The id_token to the Backend for the verication.
     },
-    getFailurData:function (errorData) {
+    getFailureData:function (errorData) {
       // The errorData variable contains failure details
     }
   }
